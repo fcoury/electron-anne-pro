@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log*
+.tmp
+.idea
+compiled
+.swp
+.vscode
+.env
+build
+dist
+.DS_Store
