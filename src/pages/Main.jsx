@@ -4,6 +4,6 @@ import Keyboard from '../components/Keyboard';
 
 export default class Main extends Component {
   render() {
-    return <Keyboard />
+    return <Keyboard />;
   }
 }

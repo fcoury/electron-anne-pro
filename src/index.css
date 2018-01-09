@@ -1,18 +1,18 @@
+.keybox {
+  position: absolute;
+  padding: 2px;
+}
+
 .key {
   transition: box-shadow 0.2s ease;
-  border: 1px solid #c7c7c7;
-  width: 54px;
-  height: 54px;
-  position: absolute;
-  border-radius: 9.2592592593%;
+  border: 1px solid hsl(0, 0%, 78%);
+  height: 48px;
+  border-radius: 3px;
   background-color: #f4f4f4;
-  padding: 0;
-  margin: 0;
   text-align: center;
 }
 
 .keytop {
-  background-color: #fcfcfc;
   border: solid 1px rgba(255,255,255,0.15);
   border-radius: 3px;
   display: flex;
@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-top: 3px;
+  margin-top: 12px;
   margin-left: 3px;
   margin-right: 3px;
   margin-bottom: 8px;
@@ -28,6 +28,6 @@
 }
 
 .keytop>div {
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #666;
 }
