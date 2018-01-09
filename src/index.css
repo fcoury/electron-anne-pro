@@ -12,6 +12,10 @@
   text-align: center;
 }
 
+.key.selected {
+  border: 1px solid red;
+}
+
 .keytop {
   border: solid 1px rgba(255,255,255,0.15);
   border-radius: 3px;

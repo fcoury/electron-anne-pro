@@ -3,11 +3,24 @@ import React from 'react';
 import Key from './Key';
 
 export default class Keyboard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: null,
+    };
+  }
+
+  handleKeyClicked(idx) {
+    return (_event) => {
+      this.setState({ selected: idx });
+    };
+  }
+
   render() {
-    const keys = [
+    const layout = [
       'ESC', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', '⟵',
       '↹', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '|',
-      '⇓', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', ',', '↵',
+      '⇓', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '\'', '↵',
       '⇑', 'Z', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', '⇑',
       'Ctrl', 'Win', 'Alt', 'Space', 'Alt', 'Fn', 'Anne', 'Ctrl',
     ];
@@ -35,11 +48,13 @@ export default class Keyboard extends React.Component {
     let y = 0;
     let x = 0;
 
-    const rows = keys.map(k => {
+    const keys = layout.map(key => { return { key }; });
+
+    const rows = keys.map((keyDef, idx) => {
       // const gapSize = specials[k] ? Math.ceil(specials[k]) * gap : 0;
+      const k = keyDef.key;
       const size = keyWidth * (specials[k] || 1);
-      console.log('size', size);
-      const res = <Key x={x} y={y} width={size} height={keyHeight} label={k} />;
+      const res = <Key x={x} y={y} width={size} height={keyHeight} label={k} onClick={this.handleKeyClicked(idx)} selected={this.state.selected === idx} />;
       x += size + gap;
       if (x >= rowWidth) {
         x = 0;
